@@ -41,6 +41,7 @@ int cmdHelp ()
             << '\n'
             << "Run 'man tasksh' from your shell prompt.\n"
             << "Run '! man tasksh' from inside tasksh.\n"
+            << "Edited by Tnex.\n"
             << '\n';
   return 0;
 }

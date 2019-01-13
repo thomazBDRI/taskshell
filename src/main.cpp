@@ -167,6 +167,14 @@ int main (int argc, const char** argv)
       if (isatty (fileno (stdin)))
         welcome ();
 
+      // Tnex modification
+      // Adding parameter to start executing a command
+      if (argc >= 2 && !strcmp (argv[1], "-e")) {
+	auto command = "task " + std::string(argv[2]);
+	std::cout << "[" << command << "]\n";
+	system (command.c_str ());
+      }
+
       while ((status = commandLoop (autoClear)) == 0)
         ;
     }
