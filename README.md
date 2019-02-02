@@ -2,7 +2,7 @@ Tnex Taskshell Fork
 ===================
 
 Forked it to make some modifications to my own needs, just uploading it in here
-in case i lost my hardware or something like that i can than retrieve it.
+in case i lost my hardware or something like that i can then retrieve it.
 
 
 Modifications
