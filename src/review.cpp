@@ -265,12 +265,14 @@ static void reviewLoop (const std::vector <std::string>& uuids, unsigned int lim
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-int cmdReview (const std::vector <std::string>& args, bool autoClear)
+int cmdReview (bool autoClear)
 {
+  // Tnex Modification
+  // Removed limit until next order
   // Is there a specified limit?
   unsigned int limit = 0;
-  if (args.size () == 2)
-    limit = strtol (args[1].c_str (), NULL, 10);
+  //if (args.size () == 2)
+    //limit = strtol (args[1].c_str (), NULL, 10);
 
   // Configure 'reviewed' UDA, but only if necessary.
   std::string input;

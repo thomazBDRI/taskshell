@@ -46,7 +46,7 @@
 // tasksh commands.
 int cmdHelp ();
 int cmdDiagnostics ();
-int cmdReview (const std::vector <std::string>&, bool);
+int cmdReview (bool);
 int cmdShell (const std::vector <std::string>&);
 std::string promptCompose ();
 std::string findTaskwarrior ();
@@ -121,7 +121,7 @@ static int commandLoop (bool autoClear)
     else if (closeEnough ("quit",        args[0], 3)) status = -1;
     else if (closeEnough ("help",        args[0], 3)) status = cmdHelp ();
     else if (closeEnough ("diagnostics", args[0], 3)) status = cmdDiagnostics ();
-    else if (closeEnough ("review",      args[0], 3)) status = cmdReview (args, autoClear);
+    else if (closeEnough ("review",      args[0], 3)) status = cmdReview (autoClear);
     else if (closeEnough ("exec",        args[0], 3) ||
              args[0][0] == '!')                       status = cmdShell (args);
     else if (command != "")
@@ -173,6 +173,11 @@ int main (int argc, const char** argv)
 	auto command = "task " + std::string(argv[2]);
 	std::cout << "[" << command << "]\n";
 	system (command.c_str ());
+      }
+
+      // Adding parameter to start on review mode
+      if (argc >= 2 && !strcmp (argv[1], "-r")) {
+        cmdReview (autoClear);
       }
 
       while ((status = commandLoop (autoClear)) == 0)
