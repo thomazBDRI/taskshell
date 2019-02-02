@@ -1,20 +1,13 @@
-# Disclaimer during ongoing development
+Tnex Taskshell Fork
+===================
 
-The development branch is a work in progress and may not pass all quality tests,
-therefore it may harm your data. While we welcome bug reports from the
-development branch, we do not guarantee proper or timely fixes.
+Forked it to make some modifications to my own needs, just uploading it in here
+in case i lost my hardware or something like that i can than retrieve it.
 
-- Make proper backups.
-- Broken functionality may arise from ongoing development work.
-- Be aware that using the development branch involves risks.
 
----
+Modifications
+=============
 
-Thank you for taking a look at tasksh!!
-
----
-
-Tasksh is released under the MIT license. For details check the LICENSE file.
-
-# Important note
-When cloning this from the repo to build from source make sure you `git clone --recursive` to get all required submodules.
+So far modifications are:
+* `-e [command]` - Added option to start the shell running the command.
+* `-r` - Added option to start running the `review` command.
